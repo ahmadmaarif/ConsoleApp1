@@ -9,14 +9,14 @@ namespace Bubble_Sort
     class Program
     {
         //Deklarasi array int dengan ukuran 20
-        private int[] a= new int[20];
+        private int[] a = new int[20];
         //Deklarasi variabel int untuk menyimpan banyak data pada array 
         private int n;
         // Fungsi /method untuk menerima masukan 
-        public void read ()
+        public void read()
         {
             // Menerima Angka untuk menentukan banyaknya data yang disimpan pada array
-            while(true)
+            while (true)
             {
                 Console.Write("Masukkan banyaknya elemen pada array: ");
                 string s = Console.ReadLine();
@@ -51,36 +51,44 @@ namespace Bubble_Sort
                 Console.WriteLine(a[j]);
             }
             Console.WriteLine("");
-            
-        public void BubbleSortArray()
-        {
-            for (int i = 1; i < n; i++) //For n - 1 passes 
+
+            public void BubbleSortArray()
             {
-                // Pada pass i, bandingkan n - i elemen pertama dengan elemen selanjutnya
-                for (int j = 0; j < n - i; j++)
+                for (int i = 1; i < n; i++) //For n - 1 passes 
                 {
-                    if (a[j] > a[j + 1]) 
-                        // Jika eleman tidak dalam urutan yang benar
+                    // Pada pass i, bandingkan n - i elemen pertama dengan elemen selanjutnya
+                    for (int j = 0; j < n - i; j++)
                     {
-                        //Tukar elemen 
-                        int temp;
-                        temp = a[j];
-                        a[j] = a[j + 1];
-                        a[j + 1] = temp;
+                        if (a[j] > a[j + 1])
+                        // Jika eleman tidak dalam urutan yang benar
+                        {
+                            //Tukar elemen 
+                            int temp;
+                            temp = a[j];
+                            a[j] = a[j + 1];
+                            a[j + 1] = temp;
 
 
+                        }
                     }
                 }
+
             }
-           
-        }
-        
-             
 
+            static void Main(string[] args)
+            {
+                // Creating the object of BubbleSort class
+                Program mylist = new Program();
 
-            
-        {
-            
+                //Pemanggil fungsi untuk menerima elemen array
+                mylist.read();
+                //Pemnaggil fungsi untuk mengurutkan array
+
+                //Pemanggil fungsi untuk menampilkan array yang tersusun
+                mylist.display();
+                //Exit
+                Console.WriteLine("\n|nTekan Tombol apa saja untuk Keluar.");
+            }
         }
     }
-
+}
