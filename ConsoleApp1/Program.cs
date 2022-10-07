@@ -4,10 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace Bubble_Sort
 {
-    internal class Program
+    class Program
     {
+        //Deklarasi array int dengan ukuran 20
+        private int[] a= new int[20];
+        //Deklarasi variabel int untuk menyimpan banyak data pada array 
+        private int n;
+        
         static void Main(string[] args)
         {
         }
